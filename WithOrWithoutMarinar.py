@@ -15,9 +15,10 @@ while x != 20:
     x += 1
     ellipsisMessage = ("InfoTechCenter OS Booting" + "." * ellipsis)
     ellipsis += 1
-    sys .stdout.write("\r" + ellipsisMessage)
+    sys.stdout.write("\r\033[K" + ellipsisMessage)
+    sys.stdout.flush()
     time.sleep(.5)
-    if ellipsisMessage == 4:
+    if ellipsis == 4:
         ellipsis = 0
-if x == 20:
-    print("\nOperating System Booted Up - Retina Scanned - Access Granted")
+    if x == 20:
+        print("\nOperating System Booted Up - Retina Scanned - Access Granted")
